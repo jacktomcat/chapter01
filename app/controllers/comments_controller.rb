@@ -1,5 +1,7 @@
 class CommentsController < ApplicationController
 
+	http_basic_authenticate_with name: "dhh", password: "secret", only: :destroy   ##仅仅只有删除的需要输入这个账号和密码
+
 	def create
 	    @article = Article.find(params[:article_id])
 	    @comment = @article.comments.create(comment_params)
