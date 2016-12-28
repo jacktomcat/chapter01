@@ -1,7 +1,7 @@
 class ArticlesController < ApplicationController
   include Tools::Random
 
-  http_basic_authenticate_with name: "dhh", password: "secret", except: [:index, :show]  ##不登陆，仅仅只有 index  show 的操作权限
+  http_basic_authenticate_with name: "1", password: "1", except: [:index, :show]  ##不登陆，仅仅只有 index  show 的操作权限
 
    def new
      @article = Article.new
