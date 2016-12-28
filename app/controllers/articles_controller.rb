@@ -1,4 +1,5 @@
 class ArticlesController < ApplicationController
+  include Tools::Random
 
   http_basic_authenticate_with name: "dhh", password: "secret", except: [:index, :show]  ##不登陆，仅仅只有 index  show 的操作权限
 
@@ -7,6 +8,12 @@ class ArticlesController < ApplicationController
    end
    
    def index
+     message = '系统生成的随机数为：' + (generate_random).to_s
+     puts message
+
+     dt = Tools::DateUtils.new(' hello')
+     t = dt.calculate_interval('20161229','20161220')
+     puts t
      @articles = Article.all
    end   
    

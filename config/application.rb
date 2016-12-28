@@ -22,5 +22,6 @@ module Chapter01
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+    config.autoload_paths += %W(#{config.root}/lib)    #如果需要加载lib下面的自定义的一些类、方法需要在这里自动加载到path
   end
 end

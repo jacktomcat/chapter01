@@ -26,3 +26,21 @@ Things you may want to cover:
 
 Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
+
+
+字串
+
+# 差
+email_with_name = user.name + ' <' + user.email + '>'
+# 好
+email_with_name = "#{user.name} <#{user.email}>"
+
+
+email=''
+email << 'zhuhh@'     # 相当于java中的stringbuffer
+
+rake doc:guides   doc/guides/index.html
+rake doc:rails    doc/api/index.html
+
+3.1.1 ERB
+在 ERB 模板中，可以使用 <% %> 和 <%= %> 标签引入 Ruby 代码。<% %> 标签用来执行 Ruby 代码，没有返回值，例如条件判断、循环或代码块。<%= %> 用来输出结果
