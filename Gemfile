@@ -1,7 +1,4 @@
 source 'https://rubygems.org'
-
-bbbbbbvaaaa
-jackjboss
 dfjaskdjfadkakdljfakdfjakldfjakldfjadklfjadklsfjadklfa
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
