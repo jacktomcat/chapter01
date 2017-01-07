@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-bbbbbbvaaaasdfasdfasdfadsfadsfasdfasdfadf
+bbbbbbvaaaa
 jackjboss
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
