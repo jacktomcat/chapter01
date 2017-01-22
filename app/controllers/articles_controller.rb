@@ -1,7 +1,7 @@
 class ArticlesController < ApplicationController
   include Tools::Random
 
-  http_basic_authenticate_with name: "1", password: "1", except: [:index, :show]  ##不登陆，仅仅只有 index  show 的操作权限
+  #http_basic_authenticate_with name: "1", password: "1", except: [:index, :show]  ##不登陆，仅仅只有 index  show 的操作权限
 
    def new
      @article = Article.new
@@ -13,6 +13,7 @@ class ArticlesController < ApplicationController
 
      dt = Tools::DateUtils.new(' hello')
      t = dt.calculate_interval('20161229','20161220')
+     @time = Time.now - 7.day
      puts t
      @articles = Article.all
    end   

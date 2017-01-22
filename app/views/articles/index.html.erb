@@ -23,6 +23,6 @@
 
 <hr/>
 
-<%= link_to '列表', articles_path %>
+<%= link_to '列表', articles_path %> <%= "#{time_ago_in_words(@time)}前" %>
 <%= link_to '新增', new_article_path %>
 
