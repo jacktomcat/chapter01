@@ -30,10 +30,5 @@ ActiveRecord::Schema.define(version: 20161227114738) do
 
   add_index "comments", ["article_id"], name: "index_comments_on_article_id", using: :btree
 
-  create_table "user", id: false, force: :cascade do |t|
-    t.integer "id",       limit: 4
-    t.string  "username", limit: 100
-  end
-
   add_foreign_key "comments", "articles"
 end

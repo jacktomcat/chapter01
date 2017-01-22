@@ -1,6 +1,8 @@
 class ArticlesController < ApplicationController
   include Tools::Random
 
+  respond_to :html, :json
+
   #http_basic_authenticate_with name: "1", password: "1", except: [:index, :show]  ##不登陆，仅仅只有 index  show 的操作权限
 
    def new
@@ -57,9 +59,10 @@ class ArticlesController < ApplicationController
 
 
   def article_api
-    @article = Article.find(params[:id])
+    #@article = Article.find(1)
+    @article = Article.all
     respond_to do |format|
-      format.json { render json: @article}
+      format.json {  render :json => @article}
     end
   end
 
