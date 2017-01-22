@@ -55,6 +55,15 @@ class ArticlesController < ApplicationController
       redirect_to articles_path
    end
 
+
+  def article_api
+    @article = Article.find(params[:id])
+    respond_to do |format|
+      format.json { render json: @article}
+    end
+  end
+
+
    private
    def article_params
      params.require(:article).permit(:title, :text)
