@@ -58,11 +58,21 @@ class ArticlesController < ApplicationController
    end
 
 
+  #/articles/article_api    on: :collection
   def article_api
-    #@article = Article.find(1)
+    #@article = Article.find(params[:id])
     @article = Article.all
     respond_to do |format|
-      format.json {  render :json => @article}
+      format.json {  render :json => @article}  #需要在routes.rb 中指定  defaults: { format: 'json' }
+      #format.xml {  render :xml => @article}   #需要在routes.rb 中指定  defaults: { format: 'xml' }
+    end
+  end
+
+  #/articles/1/article_api_id  on: :member
+  def article_api_id
+    @article = Article.find(params[:id])
+    respond_to do |format|
+      format.json {  render :json => @article}  #需要在routes.rb 中指定  defaults: { format: 'json' }
     end
   end
 

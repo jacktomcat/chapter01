@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   get 'welcome/index'
   resources :articles do
-     get :article_api, on: :collection, defaults: { format: 'json' }
+     get :article_api, on: :collection, defaults: { format: ('json') }
+     get :article_api_id, on: :member, defaults: { format: ('json') }
      resources :comments
   end
   # The priority is based upon order of creation: first created -> highest priority.
