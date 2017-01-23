@@ -77,6 +77,16 @@ class ArticlesController < ApplicationController
   end
 
 
+  #/articles/1/article_sendemail  on: :member
+  def article_sendemail
+    @article = Article.find(params[:id])
+    UserMailer.welcome_email(@article).deliver_now
+    respond_to do |format|
+      format.json {  render :json => @article}  #需要在routes.rb 中指定  defaults: { format: 'json' }
+    end
+  end
+
+
    private
    def article_params
      params.require(:article).permit(:title, :text)
